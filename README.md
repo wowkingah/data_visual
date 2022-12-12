@@ -12,3 +12,10 @@
 $ cd data_visual
 $ pip3 install -r requirements.txt
 ```
+
+# 示例
+## mpl Square
+![](.README_images/99b2c79d.png)
+
+## Scatter
+![](.README_images/6d8c993b.png)
