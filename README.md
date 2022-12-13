@@ -19,3 +19,10 @@ $ pip3 install -r requirements.txt
 
 ## Scatter
 ![](.README_images/6d8c993b.png)
+
+## Random Walk
+![](.README_images/5ade58b0.png)
+![](.README_images/93895884.png)
+![](.README_images/753819e8.png)
+![](.README_images/de019b40.png)
+![](.README_images/90e6b2b7.png)
