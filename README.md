@@ -26,3 +26,5 @@ $ pip3 install -r requirements.txt
 ![](.README_images/753819e8.png)
 ![](.README_images/de019b40.png)
 ![](.README_images/90e6b2b7.png)
+![](.README_images/8877b743.png)
+![](.README_images/229f46c9.png)

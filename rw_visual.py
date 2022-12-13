@@ -7,7 +7,11 @@ from random_walk import RandomWalk
 while True:
     # 创建一个 RandomWalk 实例，并将其包含的点都绘制出来
     rw = RandomWalk()
+    rw = RandomWalk(50000)
     rw.fill_walk()
+
+    # 设置绘图窗口的尺寸
+    plt.figure(figsize=(10, 6))
 
     # 隐藏坐标轴
     # plt.axes().get_xaxis().set_visible(False)
@@ -16,9 +20,10 @@ while True:
     current_axes.xaxis.set_visible(False)
     current_axes.yaxis.set_visible(False)
 
+    # 绘制点并将图形显示出来
     point_numbers = list(range(rw.num_points))
     plt.scatter(rw.x_values, rw.y_values, c=point_numbers, cmap=plt.cm.Blues,
-                edgecolors='none', s=15)
+                edgecolors='none', s=1)
     # plt.scatter(rw.x_values, rw.y_values, s=15)
 
     # 突出起点和终点
