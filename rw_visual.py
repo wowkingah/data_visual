@@ -7,7 +7,7 @@ from random_walk import RandomWalk
 while True:
     # 创建一个 RandomWalk 实例，并将其包含的点都绘制出来
     rw = RandomWalk()
-    rw = RandomWalk(50000)
+    rw = RandomWalk(5000)
     rw.fill_walk()
 
     # 设置绘图窗口的尺寸

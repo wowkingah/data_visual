@@ -29,3 +29,6 @@ $ pip3 install -r requirements.txt
 ![](.README_images/8877b743.png)
 ![](.README_images/229f46c9.png)
 ![](.README_images/e664c5b1.png)
+
+## Die Visual
+![](.README_images/9719ab06.png)
