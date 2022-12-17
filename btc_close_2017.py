@@ -10,7 +10,6 @@ except ImportError:
     # Python 3.x
     from urllib.request import urlopen
 
-
 proxy_support = urllib.request.ProxyHandler({'http': '127.0.0.1:7890',
                                              'https': '127.0.0.1:7890'})
 # 定制安装 opener
@@ -24,7 +23,7 @@ response = urlopen(json_url)
 req = response.read()
 
 # 将数据写入文件
-with open('data/btc_close_2017.json', 'wb') as f:
+with open('data/btc_close_2017-urllib.json', 'wb') as f:
     f.write(req)
 
 # 加载 json 格式
