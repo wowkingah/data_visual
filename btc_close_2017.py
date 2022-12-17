@@ -38,4 +38,4 @@ close_log = [math.log10(_) for _ in close]
 # line_chart.add('收盘价', close)
 # line_chart.render_to_file('收盘价拆线图（¥）.svg')
 line_chart.add('log收盘价', close_log)
-line_chart.render_to_file('收盘价 对数变换拆线图（¥）.svg')
+line_chart.render_to_file('收盘价对数变换拆线图（¥）.svg')
