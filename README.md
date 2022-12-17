@@ -40,3 +40,7 @@ $ pip3 install -r requirements.txt
 ## Daily high temperatures
 ![](.README_images/cdac3644.png)
 ![](.README_images/bd6d7979.png)
+
+## Btc Close
+![](.README_images/7eabbe56.png)
+![](.README_images/c2447e32.png)

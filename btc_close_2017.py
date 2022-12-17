@@ -1,31 +1,41 @@
-from __future__ import (absolute_import, division, print_function, unicode_literals)
-
-import urllib.request
 import json
+import pygal
+import math
 
-try:
-    # Python 2.x
-    from urllib2 import urlopen
-except ImportError:
-    # Python 3.x
-    from urllib.request import urlopen
+# 将数据加载到一个列表中
+filename = 'data/btc_close_2017-requests.json'
+with open(filename) as f:
+    btc_data = json.load(f)
 
-proxy_support = urllib.request.ProxyHandler({'http': '127.0.0.1:7890',
-                                             'https': '127.0.0.1:7890'})
-# 定制安装 opener
-opener = urllib.request.build_opener(proxy_support)
-urllib.request.install_opener(opener)
+# 创建5 个列表，分别存储日期和收盘价
+dates, months, weeks, weekdays, close = [], [], [], [], []
 
-json_url = 'https://raw.githubusercontent.com/muxuezi/btc/master/btc_close_2017.json'
-response = urlopen(json_url)
+# 每一天的信息
+for btc_dict in btc_data:
+    # date = btc_dict['date']
+    # month = int(btc_dict['month'])
+    # week = int(btc_dict['week'])
+    # weekday = btc_dict['weekday']
+    # close = int(float(btc_dict['close']))
+    # print(f"{date} is month {month} week {week}, {weekday}, the close price is {close} RMB.")
 
-# 读取数据
-req = response.read()
+    dates.append(btc_dict['date'])
+    months.append(int(btc_dict['month']))
+    weeks.append(int(btc_dict['week']))
+    weekdays.append(btc_dict['weekday'])
+    close.append(int(float(btc_dict['close'])))
 
-# 将数据写入文件
-with open('data/btc_close_2017-urllib.json', 'wb') as f:
-    f.write(req)
+# x 轴上日期标签顺时针旋转 20°，show_minor_x_labels 是否显示所有 x 轴标签
+line_chart = pygal.Line(x_label_rotation=20, show_minor_x_labels=False)
+# line_chart.title = '收盘价（¥）'
+line_chart.title = '收盘价对数交换（¥）'
+line_chart.x_labels = dates
 
-# 加载 json 格式
-file_urllib = json.loads(req)
-print(file_urllib)
+# x 轴坐标每隔20 天显示一次
+N = 20
+line_chart.x_labels_major = dates[::N]
+close_log = [math.log10(_) for _ in close]
+# line_chart.add('收盘价', close)
+# line_chart.render_to_file('收盘价拆线图（¥）.svg')
+line_chart.add('log收盘价', close_log)
+line_chart.render_to_file('收盘价 对数变换拆线图（¥）.svg')
