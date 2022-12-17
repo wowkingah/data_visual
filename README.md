@@ -36,3 +36,7 @@ $ pip3 install -r requirements.txt
 
 ## Different Visual
 ![](.README_images/3874ccfa.png)
+
+## Daily high temperatures
+![](.README_images/cdac3644.png)
+![](.README_images/bd6d7979.png)
