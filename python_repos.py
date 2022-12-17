@@ -42,8 +42,11 @@ for repo_dict in repo_dicts:
     names.append(repo_dict['name'])
 
     plot_dict = {
+        # y 轴值
         'value': repo_dict['stargazers_count'],
+        # 自定义标签
         'label': repo_dict['description'],
+        # 链接
         'xlink': repo_dict['html_url'],
     }
     plot_dicts.append(plot_dict)

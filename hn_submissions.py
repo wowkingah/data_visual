@@ -44,7 +44,8 @@ for submission_dict in submission_dicts:
 
     plot_dict = {
         "value": submission_dict['comments'],
-        "link": submission_dict['link']
+        "label": submission_dict['title'],
+        "xlink": submission_dict['link']
     }
     plot_dicts.append(plot_dict)
 
